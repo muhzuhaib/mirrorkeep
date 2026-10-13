@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mirrorkeep privacy policy</title>
+<meta name="description" content="Privacy policy for Mirrorkeep.">
+<style>
+  :root {
+    --page: #faf9f7; --surface: #fff; --text: #1c1917; --body: #2b2724;
+    --secondary: #57524e; --tertiary: #726c66;
+    --stroke: rgba(28, 25, 23, .12); --accent: #2560d0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --page: #0f0f10; --surface: #1b1b1d; --text: #f5f2ef; --body: #ece7e2;
+      --secondary: #c6bfb9; --tertiary: #9a938b;
+      --stroke: rgba(255, 255, 255, .12); --accent: #7fb2ff;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--body);
+         font: 16px/1.6 -apple-system, "Segoe UI", system-ui, sans-serif; }
+  main { max-width: 660px; margin: 0 auto; padding: 56px 24px 72px; }
+  h1 { font-size: 32px; line-height: 1.15; color: var(--text); margin: 0 0 8px; font-weight: 600; }
+  h2 { font-size: 20px; color: var(--text); margin: 40px 0 12px; font-weight: 600; }
+  h3 { font-size: 17px; color: var(--text); margin: 22px 0 4px; font-weight: 600; }
+  .lead { font-size: 18px; color: var(--secondary); margin: 0; }
+  .eyebrow { font-size: 13px; letter-spacing: .12em; text-transform: uppercase;
+             color: var(--accent); margin: 0 0 12px; font-weight: 600; }
+  ul { padding-left: 22px; } li { margin: 6px 0; }
+  a { color: var(--accent); }
+  .card { background: var(--surface); border: 1px solid var(--stroke);
+          border-radius: 12px; padding: 18px 20px; margin: 20px 0; }
+  .foot { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--stroke);
+          font-size: 14px; color: var(--tertiary); }
+</style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">Privacy</p>
+  <h1>Mirrorkeep privacy policy</h1>
+  <p class="lead">Mirrorkeep works entirely on your computer.</p>
+
+  <div class="card">
+    <ul>
+    <li><strong>No data collection.</strong> Mirrorkeep does not collect, transmit, or sell any personal data, file names, folder paths, or usage statistics.</li>
+    <li><strong>Your files stay yours.</strong> Files are copied between folders you choose on your own disks. Nothing is uploaded and nothing is shared. Replaced and deleted files are kept in a safety folder inside the destination until its retention expires.</li>
+    <li><strong>No network access.</strong> The app works without any network connection. The only network paths it can touch are destinations you explicitly choose that happen to be on a LAN, a mapped drive or a UNC path, and only Pro accepts those. Licence checks and purchases are handled entirely by the Microsoft Store.</li>
+    <li><strong>No third party services.</strong> The app contains no analytics, advertising, telemetry, or crash reporting components.</li>
+    <li><strong>Permissions.</strong> The app reads the source folder you choose and writes to the destination and its safety folder, both on your own disks. A schedule you set up is registered with the Windows Task Scheduler so the pair can run while you are signed in. It requests no other access.</li>
+    </ul>
+  </div>
+
+  <h2>Changes to this policy</h2>
+  <p>If this policy ever changes, the new version is published on this page and the date below is updated.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy can be raised at <a href="https://github.com/muhzuhaib/mirrorkeep/issues">the Mirrorkeep issue tracker</a>.</p>
+
+  <div class="foot">
+    <p>Last updated 11 October 2026.</p>
+    <p><a href="index.html">Back to support</a></p>
+  </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mirrorkeep</title>
+<meta name="description" content="Support for Mirrorkeep, a Windows app that mirrors a folder to a USB drive, a second disk or a NAS, previewing every change before a run and keeping replaced or deleted files in a dated safety folder.">
+<style>
+  :root {
+    --page: #faf9f7; --surface: #fff; --text: #1c1917; --body: #2b2724;
+    --secondary: #57524e; --tertiary: #726c66;
+    --stroke: rgba(28, 25, 23, .12); --accent: #2560d0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --page: #0f0f10; --surface: #1b1b1d; --text: #f5f2ef; --body: #ece7e2;
+      --secondary: #c6bfb9; --tertiary: #9a938b;
+      --stroke: rgba(255, 255, 255, .12); --accent: #7fb2ff;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--body);
+         font: 16px/1.6 -apple-system, "Segoe UI", system-ui, sans-serif; }
+  main { max-width: 660px; margin: 0 auto; padding: 56px 24px 72px; }
+  h1 { font-size: 32px; line-height: 1.15; color: var(--text); margin: 0 0 8px; font-weight: 600; }
+  h2 { font-size: 20px; color: var(--text); margin: 40px 0 12px; font-weight: 600; }
+  h3 { font-size: 17px; color: var(--text); margin: 22px 0 4px; font-weight: 600; }
+  .lead { font-size: 18px; color: var(--secondary); margin: 0; }
+  .eyebrow { font-size: 13px; letter-spacing: .12em; text-transform: uppercase;
+             color: var(--accent); margin: 0 0 12px; font-weight: 600; }
+  ul { padding-left: 22px; } li { margin: 6px 0; }
+  a { color: var(--accent); }
+  .card { background: var(--surface); border: 1px solid var(--stroke);
+          border-radius: 12px; padding: 18px 20px; margin: 20px 0; }
+  .foot { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--stroke);
+          font-size: 14px; color: var(--tertiary); }
+</style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">Support</p>
+  <h1>Mirrorkeep</h1>
+  <p class="lead">Mirrors a folder to a USB drive, a second disk or a NAS on Windows, showing every copy, update and delete before it happens, and keeping every replaced or deleted file in a dated safety folder you can restore from.</p>
+
+  <h2>Get help</h2>
+  <div class="card">
+    <p style="margin:0"><strong><a href="https://github.com/muhzuhaib/mirrorkeep/issues">Report a problem or ask a question</a></strong></p>
+    <p style="margin:6px 0 0; font-size:14px; color:var(--tertiary)">Please include your Windows version and what you were mirroring.</p>
+  </div>
+
+  <h2>Questions</h2>
+
+  <h3>What does the free edition do?</h3>
+  <p>The whole sync tool. One folder pair, previewed before every run so every copy, replacement and removal in the destination is listed before anything happens. A dated safety folder that keeps every file a run replaces or deletes, with restore from inside the app. The wipe guard that refuses to empty a destination when the source looks empty. And the last three safety folders are kept per pair. There is no account, no telemetry, no file count or size limit, no expiry and no countdown.</p>
+
+  <h3>Where do replaced and deleted files go?</h3>
+  <p>Into a dated safety folder inside the destination, in a folder named .mirrorkeep. Nothing a run replaces or removes is deleted for good. The restore screen lists the safety folders for each pair and puts any file back with one click. The mirror ignores the .mirrorkeep folder itself, so the safety copies never show up as changes on a later run.</p>
+
+  <h3>What happens after I restore a file?</h3>
+  <p>It goes back into the destination. If the source still does not have it, the next run will move it into the safety folder again, and the restore screen says so rather than leaving it as a surprise.</p>
+
+  <h3>What is the wipe guard?</h3>
+  <p>A refusal you want. If the source looks empty or unreadable, a run would empty a good destination, so Mirrorkeep stops and says why instead of doing it. The same plain sentence rule covers everything else: a pulled USB drive, a locked file or a missing folder stops the run and says what happened. After every run the app also checks that each file it moved into the safety folder is really there.</p>
+
+  <h3>What does Pro add?</h3>
+  <p>Scope, never permission. Unlimited folder pairs instead of one. Schedules that wake the PC to run a pair and catch up a run that was missed while the PC was off. Retention you choose, keeping every dated safety folder per pair instead of the last three, with restore from any of them. And network destinations: a mapped drive or a UNC path on your LAN. It runs the same engine, writes the same safety folders and changes nothing about how the free edition behaves.</p>
+
+  <h3>How do I cancel or manage a Pro subscription?</h3>
+  <p>Subscriptions are managed by the Microsoft Store, under Subscriptions in the Store app. Cancelling stops the renewal, the free edition keeps working exactly as before, and your pairs, run logs and every safety folder are unaffected.</p>
+
+  <h3>Which destinations can I mirror to?</h3>
+  <p>Any folder Windows can see: a USB drive, a second disk, another folder on the same PC, or with Pro a mapped drive or a UNC path on your LAN. There are no cloud providers, no accounts and no sync service.</p>
+
+  <h3>Is it one way or two way?</h3>
+  <p>One way, source to destination, by design. It is not a merge: deleting a file in the source is meant to remove it from the destination, and the safety folder is the way back. That is what makes the destination a faithful mirror of the source.</p>
+
+  <h3>Why was a file I just changed not copied?</h3>
+  <p>Timestamps are compared with a two second tolerance, so cheap USB drives formatted FAT or exFAT do not re-copy everything on every run. A file changed within two seconds of its copy can therefore wait until its next change to be picked up.</p>
+
+  <h3>Does it need an internet connection?</h3>
+  <p>No. Mirroring runs entirely on your computer. The only network paths the app can touch are destinations you explicitly choose that are on your LAN, and only Pro accepts those. Licence checks and purchases are handled entirely by the Microsoft Store, and there is no telemetry, no analytics and no account.</p>
+
+  <h3>Which Windows versions does it run on?</h3>
+  <p>Windows 10 version 2004 or newer, 64 bit, including Windows 11.</p>
+
+  <h3>What does it cost?</h3>
+  <p>Mirrorkeep is free on the Microsoft Store, and the free edition is a complete product. Its optional Pro subscription, 2.99 US dollars per month, adds unlimited folder pairs, schedules that wake the PC and catch up a missed run, retention you choose, and network destinations. Everything the free edition does keeps working whether or not Pro is bought.</p>
+
+  <div class="foot">
+    <p><a href="privacy.html">Privacy policy</a></p>
+    <p>Mirrorkeep is published by zuhaib.</p>
+  </div>
+</main>
+</body>
+</html>
