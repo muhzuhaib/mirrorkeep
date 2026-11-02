@@ -45,10 +45,11 @@
   <div class="card">
     <ul>
     <li><strong>No data collection.</strong> Mirrorkeep does not collect, transmit, or sell any personal data, file names, folder paths, or usage statistics.</li>
-    <li><strong>Your files stay yours.</strong> Files are copied between folders you choose on your own disks. Nothing is uploaded and nothing is shared. Replaced and deleted files are kept in a safety folder inside the destination until its retention expires.</li>
-    <li><strong>No network access.</strong> The app works without any network connection. The only network paths it can touch are destinations you explicitly choose that happen to be on a LAN, a mapped drive or a UNC path, and only Pro accepts those. Licence checks and purchases are handled entirely by the Microsoft Store.</li>
+    <li><strong>Your files stay yours.</strong> Files are copied between folders you choose on your own disks. Nothing is uploaded and nothing is shared. Replaced and deleted files are kept in a safety folder inside the destination until the retention you chose retires it. The app also keeps its own working files on your PC under your Windows user profile: your pair list, a record of each run, and the engine's log of each run, which names the files that run touched. They stay on your PC.</li>
+    <li><strong>No network access.</strong> The app works without any network connection. The only network paths it can touch are destinations you explicitly choose that happen to be on a LAN, a mapped drive or a UNC path, in every edition. Licence checks and purchases are handled entirely by the Microsoft Store.</li>
     <li><strong>No third party services.</strong> The app contains no analytics, advertising, telemetry, or crash reporting components.</li>
     <li><strong>Permissions.</strong> The app reads the source folder you choose and writes to the destination and its safety folder, both on your own disks. A schedule you set up is registered with the Windows Task Scheduler so the pair can run while you are signed in. It requests no other access.</li>
+    <li><strong>Tray helper at sign-in.</strong> Mirrorkeep includes a small helper, MirrorkeepAgent, that Windows starts when you sign in so that named backup drives (a Pro feature) can be recognised when you plug them in. It asks the Microsoft Store whether Pro is owned and exits at once when it is not. It collects nothing and sends nothing, and you can turn it off in Windows Settings under Apps, Startup.</li>
     </ul>
   </div>
 
@@ -59,7 +60,7 @@
   <p>Questions about this policy can be raised at <a href="https://github.com/muhzuhaib/mirrorkeep/issues">the Mirrorkeep issue tracker</a>.</p>
 
   <div class="foot">
-    <p>Last updated 11 October 2026.</p>
+    <p>Last updated 2 November 2026.</p>
     <p><a href="index.html">Back to support</a></p>
   </div>
 </main>

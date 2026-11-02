@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mirrorkeep</title>
-<meta name="description" content="Support for Mirrorkeep, a Windows app that mirrors a folder to a USB drive, a second disk or a NAS, previewing every change before a run and keeping replaced or deleted files in a dated safety folder.">
+<meta name="description" content="Support for Mirrorkeep, a Windows app that mirrors a folder to a USB drive, a second disk or a NAS, previewing every change before any manual run and keeping replaced or deleted files in a dated safety folder.">
 <style>
   :root {
     --page: #faf9f7; --surface: #fff; --text: #1c1917; --body: #2b2724;
@@ -51,25 +51,28 @@
   <h2>Questions</h2>
 
   <h3>What does the free edition do?</h3>
-  <p>The whole sync tool. One folder pair, previewed before every run so every copy, replacement and removal in the destination is listed before anything happens. A dated safety folder that keeps every file a run replaces or deletes, with restore from inside the app. The wipe guard that refuses to empty a destination when the source looks empty. And the last three safety folders are kept per pair. There is no account, no telemetry, no file count or size limit, no expiry and no countdown.</p>
+  <p>The whole sync tool. Any number of folder pairs and network destinations (a mapped drive or a UNC path). Schedules that ask Windows to wake the PC where the hardware allows and otherwise catch up at the next start. The retention you choose, 10 safety folders per pair by default and never fewer than 3. A preview before any manual run that lists every copy, replacement and removal in the destination, and a run history that records every scheduled run. Dated safety folders that keep every file a run replaces or removes, with restore from inside the app. And the empty-source guard that refuses to empty a destination when the source looks empty. There is no account, no telemetry, no file count or size limit, no expiry and no countdown.</p>
 
   <h3>Where do replaced and deleted files go?</h3>
-  <p>Into a dated safety folder inside the destination, in a folder named .mirrorkeep. Nothing a run replaces or removes is deleted for good. The restore screen lists the safety folders for each pair and puts any file back with one click. The mirror ignores the .mirrorkeep folder itself, so the safety copies never show up as changes on a later run.</p>
+  <p>Into a dated safety folder inside the destination, in a folder named .mirrorkeep. A run never deletes a file outright: what it replaces or removes is moved there. The restore screen lists the safety folders for each pair and puts any file back with one click. The mirror ignores the .mirrorkeep folder itself, so the safety copies never show up as changes on a later run. The only deletion is the retention you choose: after a good run the oldest safety folders beyond your limit are retired, and the preview names the one that will go.</p>
 
   <h3>What happens after I restore a file?</h3>
   <p>It goes back into the destination. If the source still does not have it, the next run will move it into the safety folder again, and the restore screen says so rather than leaving it as a surprise.</p>
 
-  <h3>What is the wipe guard?</h3>
-  <p>A refusal you want. If the source looks empty or unreadable, a run would empty a good destination, so Mirrorkeep stops and says why instead of doing it. The same plain sentence rule covers everything else: a pulled USB drive, a locked file or a missing folder stops the run and says what happened. After every run the app also checks that each file it moved into the safety folder is really there.</p>
+  <h3>What is the empty-source guard?</h3>
+  <p>A refusal you want. If the source looks empty or unreadable, a run would empty a good destination, so Mirrorkeep stops and says why instead of doing it. A destination that is not there when a run starts, the wrong drive or a USB stick left in the drawer, ends as "destination not present" and touches nothing. A file that is in use is listed as not copied, the run carries on, and it ends as finished with skipped files, never as a good copy. After every run the app also checks that each file it moved into the safety folder is really there.</p>
 
   <h3>What does Pro add?</h3>
-  <p>Scope, never permission. Unlimited folder pairs instead of one. Schedules that wake the PC to run a pair and catch up a run that was missed while the PC was off. Retention you choose, keeping every dated safety folder per pair instead of the last three, with restore from any of them. And network destinations: a mapped drive or a UNC path on your LAN. It runs the same engine, writes the same safety folders and changes nothing about how the free edition behaves.</p>
+  <p>Scope, never permission. Named backup drives that Mirrorkeep recognises when you plug them in, with the date of the last good copy and a warning when a drive is overdue. Scheduled verification of the copies, with repair. A timeline that shows a pair as it was at any earlier run, with restore drills that prove your files come back. And a space forecast with consented pruning, plus a one-page health report per pair. It runs the same engine, writes the same safety folders and changes nothing about how the free edition behaves.</p>
 
-  <h3>How do I cancel or manage a Pro subscription?</h3>
-  <p>Subscriptions are managed by the Microsoft Store, under Subscriptions in the Store app. Cancelling stops the renewal, the free edition keeps working exactly as before, and your pairs, run logs and every safety folder are unaffected.</p>
+  <h3>What does Pro cost, and how do I cancel?</h3>
+  <p>The Microsoft Store sells Pro two ways with the same scope: one payment of 9.99 US dollars, yours for good on your Microsoft account, or 0.99 US dollars a month as a subscription. The monthly plan is managed by the Microsoft Store, under Subscriptions in the Store app. Cancelling stops the renewal, the free edition keeps working exactly as before, and your pairs, run logs and every safety folder are unaffected.</p>
+
+  <h3>What is the tray helper?</h3>
+  <p>Named backup drives are recognised by a small helper that Windows starts when you sign in. It exits at once unless Pro is on, and it can be turned off in Windows Settings under Apps, Startup. It collects nothing and sends nothing.</p>
 
   <h3>Which destinations can I mirror to?</h3>
-  <p>Any folder Windows can see: a USB drive, a second disk, another folder on the same PC, or with Pro a mapped drive or a UNC path on your LAN. There are no cloud providers, no accounts and no sync service.</p>
+  <p>Any folder Windows can see: a USB drive, a second disk, another folder on the same PC, or a mapped drive or a UNC path on your LAN, all in the free edition. There are no cloud providers, no accounts and no sync service.</p>
 
   <h3>Is it one way or two way?</h3>
   <p>One way, source to destination, by design. It is not a merge: deleting a file in the source is meant to remove it from the destination, and the safety folder is the way back. That is what makes the destination a faithful mirror of the source.</p>
@@ -78,13 +81,13 @@
   <p>Timestamps are compared with a two second tolerance, so cheap USB drives formatted FAT or exFAT do not re-copy everything on every run. A file changed within two seconds of its copy can therefore wait until its next change to be picked up.</p>
 
   <h3>Does it need an internet connection?</h3>
-  <p>No. Mirroring runs entirely on your computer. The only network paths the app can touch are destinations you explicitly choose that are on your LAN, and only Pro accepts those. Licence checks and purchases are handled entirely by the Microsoft Store, and there is no telemetry, no analytics and no account.</p>
+  <p>No. Mirroring runs entirely on your computer. The only network paths the app can touch are destinations you explicitly choose that are on your LAN. Licence checks and purchases are handled entirely by the Microsoft Store, and there is no telemetry, no analytics and no account.</p>
 
   <h3>Which Windows versions does it run on?</h3>
   <p>Windows 10 version 2004 or newer, 64 bit, including Windows 11.</p>
 
   <h3>What does it cost?</h3>
-  <p>Mirrorkeep is free on the Microsoft Store, and the free edition is a complete product. Its optional Pro subscription, 2.99 US dollars per month, adds unlimited folder pairs, schedules that wake the PC and catch up a missed run, retention you choose, and network destinations. Everything the free edition does keeps working whether or not Pro is bought.</p>
+  <p>Mirrorkeep is free on the Microsoft Store, and the free edition is a complete product. Optional Pro adds named backup drives, scheduled verification with repair, a restore timeline with drills, and a space forecast with a health report, for one payment of 9.99 US dollars or 0.99 US dollars a month. Everything the free edition does keeps working whether or not Pro is bought.</p>
 
   <div class="foot">
     <p><a href="privacy.html">Privacy policy</a></p>
